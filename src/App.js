@@ -1,19 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Users from "./components/Users";
-import Books from "./components/Books";
-import Transactions from "./components/Transactions";
+import LoginScreen from "./components/LoginScreen";
+import TransactionManagement from "./components/TransactionManagement";
+import MembersManagement from "./components/MembersManagement";
+import BooksManagement from "./components/BooksManagement";
+import SignUpScreen from "./components/SignupScreen";
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <div className="container">
+      <div>
         <Routes>
           <Route path="/users" element={<Users />} />
-          <Route path="/books" element={<Books />} />
-          <Route path="/transactions" element={<Transactions />} />
+          <Route path="/register" element={<SignUpScreen />} />
+          <Route path="/books" element={<BooksManagement />} />
+          <Route path="/members" element={<MembersManagement />} />
+          <Route path="/transactions" element={<TransactionManagement />} />
+          <Route path="/login" element={<LoginScreen />} />
         </Routes>
       </div>
     </Router>
